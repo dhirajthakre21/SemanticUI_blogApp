@@ -1,0 +1,44 @@
+<%- include ("partials/header") %>
+<body style='background-color : pink '>
+<div class='ui main text container segment '>
+	<div class='ui huge header'>
+		New Blog 
+	</div>
+<form action='/blogs' method='POST'>
+		<div class="ui form">
+				<div class="field">
+				  <label>Title</label>
+					<! Here we have created list blog containing title , image and content >
+				  <input type="text" name =blog[title] placeholder="Enter title ">
+				</div>
+				
+				<div class="field">
+				  <label>Image</label>
+				  <input type="text" name =blog[image] placeholder="Enter Image URL">
+				</div>
+				
+				<div class="field">
+				  <label>Blog Content</label>
+					<! to text big paragraph  we use this tag >
+					<textarea name =blog[body] > </textarea>
+				</div>  
+	  		</div>
+				<br>
+		    <div>
+				<input type='submit' class="ui big violet basic button" >
+			</div>
+	
+	</form>
+</div>
+	<br>
+	<br>
+</body>
+<div style='background-color : rgb(120 , 170 , 255)'>
+	<br>
+	<br>
+		<div>
+		<%- include ("partials/footer") %>
+		</div>
+	<br>
+	<br>
+</div>

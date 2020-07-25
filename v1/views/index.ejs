@@ -1,0 +1,42 @@
+
+<%- include ("partials/header") %>
+<body style='background-color : pink '>
+	<div class='ui main text container segment '>
+		<div class='ui huge header'> Restfull Blog App</div>
+			<div class='ui top attached segment'>
+				<div class='ui divided items '>
+					<% blogs.forEach(function(blogs){ %>
+						<div class='item'>
+							
+							<div class='image'> <img src ="<%= blogs.image %>" ></div>
+							<div class='content'>	
+								<a class='header' ><%= blogs.title %></a>
+								<div class='meta'><span><%= blogs.created.toDateString()%> </span></div>
+
+								<! to show only 0 to 100 words >
+								<div class ='description'>
+									<p><%- blogs.body.substring( 0 , 100 ) %> ... </p>
+									<a href='/blogs/<%= blogs._id%>'class="ui violet basic button">Read More <i class='right chevron icon'> </i> 
+									</a>
+								</div>
+							</div>
+						</div>
+							<%});%>
+						
+				</div>
+			</div>
+	</div>
+	<br>
+	<br>
+	<br>
+	
+</body>
+<div style='background-color : rgb(120 , 170 , 255)'>
+	<br>
+	<br>
+		<div>
+		<%- include ("partials/footer") %>
+		</div>
+	<br>
+	<br>
+</div>

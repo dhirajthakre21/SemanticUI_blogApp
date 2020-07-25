@@ -1,0 +1,45 @@
+<%- include ("partials/header") %>
+<body style='background-color : pink '>
+<div class='ui main text container segment '>
+	<div class='ui huge header'>
+		Edit <%= blog.title %>
+	</div>
+<form action="/blogs/<%= blog._id %>?_method=PUT" method="POST">
+		<div class="ui form" >
+				<div class="field">
+				  <label>Title</label>
+					<! Here we have created list blog containing title , image and content >
+				  <input type="text" name =blog[title] value='<%=blog.title %>'>
+				</div>
+				
+				<div class="field">
+				  <label>Image</label>
+				  <input type="text" name =blog[image] value="<%= blog.image %>">
+				</div>
+				
+				<div class="field">
+				  <label>Blog Content</label>
+					<! to text big paragraph  we use this tag >
+					<textarea name =blog[body] > <%= blog.body %> </textarea>
+				</div>  
+	  		</div>
+				<br>
+		    <div>
+				<input type='submit' class="ui big violet basic button" >
+			</div>
+	
+	</form>
+	
+</div>
+</body>
+<br>
+<br>
+<div style='background-color : rgb(120 , 140 , 255)'>
+	<br>
+	<br>
+		<div>
+		<%- include ("partials/footer") %>
+		</div>
+	<br>
+	<br>
+</div>

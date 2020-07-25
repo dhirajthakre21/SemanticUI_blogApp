@@ -1,0 +1,45 @@
+
+<%- include ("partials/header") %>
+<body style='background-color : pink '>
+<div class='ui main text container segment'>
+	<div class='ui huge header '><%= blog.title %> </div >
+		<div class="ui top attached segment">
+			<div class='item'>
+			<! make corner of image somewhat rounded >
+				<img class='ui centered rounded image' src ="<%= blog.image %>" >
+				
+				<div style='color : blue 'class='content'>
+					<! to make date in readable form >
+					<span> <%= blog.created.toDateString() %> </span>
+				</div>
+				
+				<div class='description'>
+					<p><%- blog.body %> </p> 
+	<! here we have used - because the it can implement in form of html also for eg if we enter the data with header tag it will show that data with bolded font because the - signenables node js to print with properties of html >
+				</div>
+		
+			<! buttons for edit , go back and add new : This is additional>
+	
+				<a href='/blogs' class="ui green basic button">Go back </a> 
+				<a href='/blogs/<%= blog._id%>/edit' class="ui pink basic button">Edit</a>
+				<form id='delete' action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+					<button class="ui yellow basic button" > Delete </button>
+				</form>
+		
+			</div>
+		</div>
+	</div>
+	<br>
+	<br>
+	<br>
+</body>
+<div style='background-color : rgb(120 , 140 , 255)'>
+	<br>
+	<br>
+		<div>
+		<%- include ("partials/footer") %>
+		</div>
+	<br>
+	<br>
+</div>
+
